@@ -2,6 +2,7 @@ import { Component } from "react";
 import { connect } from "react-redux";
 
 import { getLocationThunk } from '../actions/estadosBrasil';
+import { getMunicipioThunk } from '../actions/municipiosBrasil';
 
 
 class Select extends Component {
@@ -9,6 +10,7 @@ class Select extends Component {
         super();
         this.state = {
             estado: '',
+            municipio: '',
         };
         this.onChange = this.onChange.bind(this);
     }
@@ -22,6 +24,8 @@ class Select extends Component {
 
     onChange(event) {
         this.setState({ [event.target.name]: event.target.value })
+        const { getMunicipio } = this.props;
+        getMunicipio(event.target.value);
     }
 
     render() {
@@ -54,9 +58,16 @@ class Select extends Component {
                       name="municipio"
                       id="input-city"
                     >
-                    <option>
-                    {municipio}
-                    </option>
+                    {municipio.map((city) => {
+                        return (
+                            <option
+                            key={city.id}
+                            value={city.id}
+                            >
+                            {city.nome}
+                            </option>
+                        )
+                    })}
                     </select>
                 </label>
             </div>
@@ -64,12 +75,14 @@ class Select extends Component {
     }
 }
 
-const mapStateToProps = ({ estados: { estado } }) => ({
-    estado,
+const mapStateToProps = (storeRedux) => ({
+    estado: storeRedux.estados.estado,
+    municipio: storeRedux.municipios.municipio
 });
 
 const mapDispatchToProps = (dispatch) => ({
     getLocation: () => dispatch(getLocationThunk()),
+    getMunicipio: (id) => dispatch(getMunicipioThunk(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Select);

@@ -9,7 +9,8 @@ export const municipiosBrasil = (
     state = INITIAL_STATE,
     action,
 ) => {
-    switch(action.tupe) {
+    console.log(action.payload)
+    switch(action.type) {
         case GET_MUNICIPIO:
             return {
                 ...state,
@@ -19,7 +20,7 @@ export const municipiosBrasil = (
             return {
                 ...state,
                 isLoading: false,
-                estado: action.payload,
+                municipio: action.payload,
             };
         case GET_MUNICIPIO_ERROR:
             return {
