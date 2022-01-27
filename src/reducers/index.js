@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import localidade from './localidade'
+import estados from './estadosBrasil';
+import municipios from './municipioBrasil';
 
 const rootReducer = combineReducers({
-    localidade,
+    estados,
+    municipios,
 });
 
 export default rootReducer;

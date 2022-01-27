@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { connect } from "react-redux";
 
-import { getLocationThunk } from '../actions';
+import { getLocationThunk } from '../actions/estadosBrasil';
 
 
 class Select extends Component {
@@ -12,6 +12,8 @@ class Select extends Component {
         };
         this.onChange = this.onChange.bind(this);
     }
+
+    // disparar uma nova requisica p API de acordo com o ID
 
     componentDidMount() {
         const { getLocation } = this.props;
@@ -36,7 +38,8 @@ class Select extends Component {
                         {estado.map((uf) => {
                             return (
                               <option
-                              value={uf.sigla}
+                              key={uf.id}
+                              value={uf.id}
                               >
                               {uf.sigla}
                               </option>
@@ -61,9 +64,8 @@ class Select extends Component {
     }
 }
 
-const mapStateToProps = ({ localidade: { estado, municipio } }) => ({
+const mapStateToProps = ({ estados: { estado } }) => ({
     estado,
-    municipio,
 });
 
 const mapDispatchToProps = (dispatch) => ({

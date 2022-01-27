@@ -22,25 +22,10 @@ export const getLocationError = (payload) => ({
     payload,
 });
 
-export const addLocation = (payload) => ({
-    type: ADD_LOCATION,
-    payload,
-});
-
 export const getLocationThunk = () => (dispatch) => {
     dispatch(getLocation());
     fetchStatesAPI().then((response) => {
       const apiData = (response);
-      console.log(apiData);
       dispatch(getLocationSuccess(apiData));
     }).catch(() => { dispatch(getLocationError()); });
-  };
-  
-  export const addStatesThunk = (ufs) => (dispatch) => {
-    fetchStatesAPI().then((response) => {
-      const ufSigla = (response);
-      console.log(ufSigla);
-      const data = { ...ufs, ufSigla };
-      dispatch(addLocation(data));
-    });
   };
