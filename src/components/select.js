@@ -1,9 +1,13 @@
 import { Component } from "react";
 import { connect } from "react-redux";
 
+import { getLocationThunk } from '../actions';
+
+
 class Select extends Component {
     componentDidMount() {
-        
+        const { getLocation } = this.props;
+        getLocation();
     }
 
     render() {
@@ -42,4 +46,8 @@ const mapStateToProps = ({ localidade: { estado, municipio } }) => ({
     municipio,
 });
 
-export default connect(mapStateToProps, null)(Select);
+const mapDispatchToProps = (dispatch) => ({
+    getLocation: () => dispatch(getLocationThunk()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Select);
