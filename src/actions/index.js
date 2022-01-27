@@ -22,10 +22,10 @@ export const getLocationError = (payload) => ({
     payload,
 });
 
-/* export const addLocation = (payload) => ({
+export const addLocation = (payload) => ({
     type: ADD_LOCATION,
     payload,
-}); */
+});
 
 export const getLocationThunk = () => (dispatch) => {
     dispatch(getLocation());
@@ -33,14 +33,14 @@ export const getLocationThunk = () => (dispatch) => {
       const apiData = (response);
       console.log(apiData);
       dispatch(getLocationSuccess(apiData));
-    }).catch(() => { dispatch(getLocationError([])); }); // Quando tiver um erro, retorna um array vazio
+    }).catch(() => { dispatch(getLocationError()); });
   };
   
-/*   export const addStatesThunk = (ufs) => (dispatch) => {
+  export const addStatesThunk = (ufs) => (dispatch) => {
     fetchStatesAPI().then((response) => {
-      const ufStates = (response);
-      console.log(ufStates);
-      const data = { ...ufs, ufStates };
+      const ufSigla = (response);
+      console.log(ufSigla);
+      const data = { ...ufs, ufSigla };
       dispatch(addLocation(data));
     });
-  }; */
+  };

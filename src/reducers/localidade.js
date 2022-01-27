@@ -1,16 +1,16 @@
-import { GET_LOCATION, GET_LOCATION_SUCCESS, GET_LOCATION_ERROR } from '../actions';
+import { GET_LOCATION, GET_LOCATION_SUCCESS, GET_LOCATION_ERROR, ADD_LOCATION } from '../actions';
 
 const INITIAL_STATE = {
     estado: [],
     municipio: [],
-    error: null,
-    isLoading: false,
+    isLoading: true,
 };
 
 export const localidade = (
  state = INITIAL_STATE,
  action,
 ) => {
+    console.log(action.payload)
     switch(action.type) {
         case GET_LOCATION:
             return {
@@ -21,19 +21,17 @@ export const localidade = (
             return {
                 ...state,
                 isLoading: false,
-                estado: action.payload.estado,
-                municipio: action.payload.municipio,
+                estado: action.payload,
             };
         case GET_LOCATION_ERROR:
             return {
                 ...state,
                 isLoading: false,
-                error: action.payload.error,
             };;
-        /* case ADD_LOCATION:
+        case ADD_LOCATION:
             return {
                 ...state, estado: [...state.estado, action.payload],
-            } */
+            }
         default:
             return state;
     }

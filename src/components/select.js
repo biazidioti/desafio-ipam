@@ -5,9 +5,21 @@ import { getLocationThunk } from '../actions';
 
 
 class Select extends Component {
+    constructor() {
+        super();
+        this.state = {
+            estado: '',
+        };
+        this.onChange = this.onChange.bind(this);
+    }
+
     componentDidMount() {
         const { getLocation } = this.props;
         getLocation();
+    }
+
+    onChange(event) {
+        this.setState({ [event.target.name]: event.target.value })
     }
 
     render() {
@@ -19,10 +31,18 @@ class Select extends Component {
                     <select
                       name="estado"
                       id="input-state"
-                    >
-                    <option>
-                    {estado}
-                    </option>
+                      onChange={ this.onChange }
+                      >
+                        {estado.map((uf) => {
+                            return (
+                              <option
+                              value={uf.sigla}
+                              >
+                              {uf.sigla}
+                              </option>
+                            )
+                        })}
+                  
                     </select>
                 </label>
                 <label htmlFor="input-city">
