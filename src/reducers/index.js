@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import statesReducer from './statesReducer'
+import localidade from './localidade'
 
 const rootReducer = combineReducers({
-    statesReducer,
+    localidade,
 });
 
 export default rootReducer;

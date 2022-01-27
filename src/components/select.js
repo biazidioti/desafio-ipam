@@ -2,6 +2,10 @@ import { Component } from "react";
 import { connect } from "react-redux";
 
 class Select extends Component {
+    componentDidMount() {
+        
+    }
+
     render() {
         const { estado, municipio } = this.props;
         return(
@@ -33,9 +37,9 @@ class Select extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    estado: state.statesReducer.estado,
-    municipio: state.statesReducer.municipio,
+const mapStateToProps = ({ localidade: { estado, municipio } }) => ({
+    estado,
+    municipio,
 });
 
 export default connect(mapStateToProps, null)(Select);

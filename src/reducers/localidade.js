@@ -3,7 +3,7 @@ const INITIAL_STATE = {
     municipio: '',
 };
 
-const states = (
+const localidade = (
  state = INITIAL_STATE,
  action,
 ) => {
@@ -13,4 +13,4 @@ const states = (
     }
 };
 
-export default states;
+export default localidade;
