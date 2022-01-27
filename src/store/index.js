@@ -4,7 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from '../reducers';
 
 export const store = createStore(
-    rootreducer,
+    rootReducer,
     composeWithDevTools(),
 );
 

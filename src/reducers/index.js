@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-// importar o reducer do estado global
+import statesReducer from './statesReducer'
 
 const rootReducer = combineReducers({
-    // estado global
+    statesReducer,
 });
 
 export default rootReducer;

@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
-
+    estado: '',
+    municipio: '',
 };
 
 const states = (
