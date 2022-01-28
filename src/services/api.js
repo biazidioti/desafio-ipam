@@ -4,8 +4,8 @@ const MUNICIPIO_API = (id) => `https://servicodados.ibge.gov.br/api/v1/localidad
 const DISTRITO_API = (id) => `https://servicodados.ibge.gov.br/api/v1/localidades/municipios/${id}/distritos`;
 
 export function fetchStatesAPI() {
-    return fetch(ESTADOS_API)
-      .then((response) => response.json());
+  return fetch(ESTADOS_API)
+    .then((response) => response.json());
 };
 
 export function fetchMunicipioAPI(id) {
