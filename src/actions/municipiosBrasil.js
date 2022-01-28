@@ -23,7 +23,6 @@ export const getMunicipioThunk = (id) => (dispatch) => {
     dispatch(getMunicipio());
     fetchMunicipioAPI(id).then((res) => {
         const municipios = (res);
-        console.log(municipios);
         dispatch(getMunicipioSuccess(municipios));
     }).catch(() => { dispatch(getMunicipioError()); });
 };
