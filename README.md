@@ -49,11 +49,6 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 
-# Considerações finais
-
-Referências:
-
-
 # Contato
 
 :email: biazidioti@gmail.com :alien:
