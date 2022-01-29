@@ -1,4 +1,5 @@
-import { GET_DISDRICT, GET_DISDRICT_SUCCESS, GET_DISDRICT_ERROR } from '../actions/distritoBrasil';
+import { GET_DISTRICT, GET_DISTRICT_SUCCESS, GET_DISTRICT_ERROR } from '../actions/distritoBrasil';
+import { GET_MUNICIPIO_SUCCESS } from '../actions/municipiosBrasil';
 
 const INITIAL_STATE = {
     distrito: [],
@@ -10,22 +11,28 @@ export const distritoBrasil = (
     action,
 ) => {
     switch(action.type) { 
-        case GET_DISDRICT:
+        case GET_DISTRICT:
             return {
                 ...state,
                 isLoading: true,
             };
-        case GET_DISDRICT_SUCCESS:
+        case GET_DISTRICT_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
-                distrito: action.payoad,
+                distrito: action.payload,
             };
-        case GET_DISDRICT_ERROR:
+        case GET_DISTRICT_ERROR:
             return {
                 ...state,
                 isLoading: false,
             };
+        case GET_MUNICIPIO_SUCCESS:
+            return {
+                ...state, 
+                distrito: [],
+                isLoading: false,
+            }
         default:
             return state;
     }

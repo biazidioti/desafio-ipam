@@ -20,69 +20,114 @@ class Select extends Component {
 
     // disparar uma nova requisica p API de acordo com o ID
 
-    componentDidMount() {
-        const { getLocation } = this.props;
-        getLocation();
-    }
+componentDidMount() {
+    const { getLocation } = this.props;
+    getLocation();
+}
 
-    onChange(event) {
-        this.setState({ [event.target.name]: event.target.value })
-        const { getMunicipio } = this.props;
-        getMunicipio(event.target.value);
-    }
-    
-    handleChange(e) {
-        this.setState({ [e.target.name]: e.target.value })
-        const { getDistrict } = this.props;
-        getDistrict(e.target.value);
-    }
+onChange(event) {
+    this.setState({ [event.target.name]: event.target.value })
+    const { getMunicipio } = this.props;
+    getMunicipio(event.target.value);
+}
 
-    render() {
-        const { estado, municipio } = this.props;
-        return(
-            <div>
-                <label htmlFor="input-state">
-                    Selecione um estado:
-                    <select
-                      name="estado"
-                      id="input-state"
-                      onChange={ this.onChange }
-                      >
-                        {estado.map((uf) => {
+handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value })
+    const { getDistrict } = this.props;
+    getDistrict(e.target.value);
+}
+
+render() {
+    const { estado, municipio, distrito } = this.props;
+    return(
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label htmlFor="input-state">
+                                UF:
+                                <select
+                                name="estado"
+                                id="input-state"
+                                onChange={ this.onChange }
+                                >
+                                <option>Selecione um estado</option>
+                                    {estado.map((uf) => {
+                                        return (
+                                        <option
+                                        key={uf.id}
+                                        value={uf.id}
+                                        >
+                                        {uf.sigla}
+                                        </option>
+                                        )
+                                    })}
+                            
+                                </select>
+                            </label>
+                        </td>
+                        <td>
+                            <label htmlFor="input-city">
+                                Município:
+                                <select
+                                name="municipio"
+                                id="input-city"
+                                onChange={ this.handleChange }
+                                >
+                                <option>Selecione um município</option>
+                                {municipio.map((city) => {
+                                    return (
+                                        <option
+                                        key={city.id}
+                                        value={city.id}
+                                        >
+                                        {city.nome}
+                                        </option>
+                                    )
+                                })}
+                                </select>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Região</th>
+                        {distrito.map((dis) => {
                             return (
-                              <option
-                              key={uf.id}
-                              value={uf.id}
-                              >
-                              {uf.sigla}
-                              </option>
+                                <td
+                                key={dis.id}
+                                value={dis.id}
+                                >{dis.municipio.microrregiao.mesorregiao.UF.regiao.nome}</td>
                             )
                         })}
-                  
-                    </select>
-                </label>
-                <label htmlFor="input-city">
-                    Selecione um município:
-                    <select
-                      name="municipio"
-                      id="input-city"
-                      onChange={ this.handleChange }
-                    >
-                    {municipio.map((city) => {
-                        return (
-                            <option
-                            key={city.id}
-                            value={city.id}
-                            >
-                            {city.nome}
-                            </option>
-                        )
-                    })}
-                    </select>
-                </label>
-            </div>
-        )
-    }
+                    </tr>
+                    <tr>
+                        <th>Mesorregião</th>
+                        {distrito.map((dis) => {
+                            return (
+                                <td
+                                key={dis.id}
+                                value={dis.id}
+                                >{dis.municipio.microrregiao.mesorregiao.nome}</td>
+                            )
+                        })}
+                    </tr>
+                    <tr>
+                        <th>Microrregião</th>
+                        {distrito.map((dis) => {
+                            return (
+                                <td
+                                key={dis.id}
+                                value={dis.id}
+                                >{dis.municipio.microrregiao.nome}</td>
+                            )
+                        })}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    )
+}
 }
 
 const mapStateToProps = (storeRedux) => ({
