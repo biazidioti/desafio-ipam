@@ -91,6 +91,17 @@ render() {
                         </td>
                     </tr>
                     <tr>
+                        <th>Distrito</th>
+                        {distrito.map((dis) => {
+                            return (
+                                <td
+                                key={dis.id}
+                                value={dis.id}
+                                >{dis.nome}</td>
+                            )
+                        })}
+                    </tr>
+                    <tr>
                         <th>Região</th>
                         {distrito.map((dis) => {
                             return (
