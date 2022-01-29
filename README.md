@@ -42,11 +42,11 @@ Pelo terminal de comando:
     
   A aplicação irá rodar na porta http://localhost:3000/
 
-## Learn More about React
+## Sobre React
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Você pode ver mais sobre React: [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Para aprender: [React documentation](https://reactjs.org/).
 
 
 # Contato
