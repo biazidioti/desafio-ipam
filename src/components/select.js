@@ -41,7 +41,7 @@ render() {
     const { estado, municipio, distrito } = this.props;
     return(
         <div>
-            <table>
+            <table className="table">
                 <tbody>
                     <tr>
                         <td>

@@ -18,7 +18,7 @@ function App() {
           Entende-se por mesorregião uma área individualizada em uma Unidade da Federação que apresenta formas de organização do espaço geográfico definidas pelas seguintes dimensões: i. o processo social como determinante, ii. o quadro natural como condicionante e iii. a rede de comunicação e de lugares como elemento da articulação espacial. 
         </p>
         <div>
-        <img src={regioes} alt="regioes-brasil" />
+        <img src={regioes} alt="regioes-brasil" className="img" />
         <h6>Fonte: https://mundoeducacao.uol.com.br/geografia/as-regioes-brasil.htm
         visitado em: 28 de janeiro de 2022</h6>
         </div>
@@ -27,7 +27,7 @@ function App() {
         As microregiões foram definidas como partes das mesorregiões que apresentam especificidades quanto à organização do espaço. Essas especeficidades referem-se à estrutura de produção agropecuária, industrial, extrativismo mineral ou pesca.
         A organização do espaço microrregional foi identificada também pela vida de relações ao nível local, into é, pela interação entre as áreas de produção e locais de beneficiamento, e pela possibilidade de atender às populações através do comércio de varejo ou atacado ou dos setores sociais básicaos. Assim, estrutura da produção para identificação das microrregiões é considerada em sentido totalizante, constituindo-se pela produção, propriamente dita, distribuição, troca e consumo, incluindo atividades urbanas e rurais. Dessa forma, ela expressa a organização do espaço a nível micro ou local.
         </p>
-        <h2>Fatos históricos sobre a elaboração das mesorregiões e microrregiões do Brasil</h2>
+        <h2 className="h2">Fatos históricos sobre a elaboração das mesorregiões e microrregiões do Brasil</h2>
         <p>
         Cabendo ao Departamento de Geografia (DEGEO) elaborar como parte da missão institucional do IBGE a Divisão Regional do Brasil foi delegada à sua Divisão de Estudos Territoriais (DITER) no ano de 1987 a tarefa de produzir a Divisão Regional em Miesorregiões e Microrregiões Geográficas para fins estatísticos em substituiçâo à Divisão Regional em Microrregiões Homogêneas editadl pelo IBGE em 1968.
         A definição dos novos agregados espaciais foi avaliada através de discussão dos geógrafos do DEGEO participantes do projeto. 
@@ -35,7 +35,7 @@ function App() {
         A discussão final é aprovação da nova Divisão Regional em Mesorregiões è Microgegiões Geográficas foi efetuada em Seminário realizado pelo Departamento de Geografia em 22/11/88 promovido pela Diretoria de Geociências.
         </p>
         <div>
-        <h5>Divisão Regional do Brasil - Mesorregiões geográficas - 1989</h5>
+        <h4>Divisão Regional do Brasil - Mesorregiões geográficas - 1989</h4>
         <img src={mesorregiao} alt="regioes-brasil" width="500px" title="Divisão Regional do Brasil - Mesorregiões geográficas - 1989"/>
         <h6>Fonte: https://www.ibge.gov.br/geociencias/cartas-e-mapas/redes-geograficas/15778-divisoes-regionais-do-brasil.html?=&t=o-que-e / 
         visitado em: 28 de janeiro de 2022</h6>
@@ -47,7 +47,7 @@ function App() {
         Com esta obra, o Departamento de Geografia da Diretoria de Geociências do IBGE entregou aos seus usuários a Divisão Regional que foi adotada em 01/ 1/90 pelo Sistema Estatístico Nacional.  A relevância deste trabalho sobre a organização regional do Brasil reside, não só no fato de servir à divulgação de dados estatísticos segundo os apreçados espaciais produzidos, mas também na perspectiva de oferecer elementos para a compreensão da organização do território nacional.
         </p>
         <div>
-        <h5>Divisão Regional do Brasil - Microrregiões geográficas - 1989</h5>
+        <h4>Divisão Regional do Brasil - Microrregiões geográficas - 1989</h4>
         <img src={microrregiao} alt="regioes-brasil" width="500px"/>
         <h6>Fonte: https://www.ibge.gov.br/geociencias/cartas-e-mapas/redes-geograficas/15778-divisoes-regionais-do-brasil.html?=&t=o-que-e / 
         visitado em: 28 de janeiro de 2022</h6>
@@ -56,11 +56,12 @@ function App() {
         Ao total foram delimitadas 558 microrregiões, distribuídas em 137 mesorregiões.
         As mesorregiões e microrregiões do Brasil constituíram a divisão geográfica regional do país vigente entre 1989 e 2017. Em 2017, foram substituídas, respectivamente, pelas regiões geográficas intermediárias e imediatas.
         </p>
-        <h2>Agora que você já sabe, que tal conhecer um pouco mais sobre o Brasil?
+        <h2 className="h2">Agora que você já sabe, que tal conhecer um pouco mais sobre o Brasil?
         Consulte a lista de municípios e veja de onde ele faz parte!</h2>
       <Select />
       <footer>
-        <h5>Referências</h5>
+        <h5>Referências: texto modificado https://biblioteca.ibge.gov.br/visualizacao/livros/liv2269_1.pdf
+        </h5>
       </footer>
     </>
   );
